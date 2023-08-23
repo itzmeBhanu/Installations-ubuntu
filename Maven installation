@@ -1,8 +1,8 @@
+sudo apt update && sudo apt upgrade -y
 wget https://dlcdn.apache.org/maven/maven-3/3.9.4/binaries/apache-maven-3.9.4-bin.tar.gz
 sudo tar xf apache-maven-*.tar.gz -C /opt
 sudo ln -s /opt/apache-maven-3.9.4 /opt/maven
 sudo nano /etc/profile.d/maven.sh
-export JAVA_HOME=/usr/lib/jvm/default-java
 sudo sed -i '1iexport M2_HOME=/opt/maven' /etc/profile.d/maven.sh
 sudo sed -i '2iexport MAVEN_HOME=/opt/maven' /etc/profile.d/maven.sh
 sudo sed -i '3iexport PATH=${M2_HOME}/bin:${PATH}' /etc/profile.d/maven.sh
